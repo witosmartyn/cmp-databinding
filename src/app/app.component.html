@@ -1,5 +1,8 @@
 <div class="container">
-<app-cockit></app-cockit>
+<app-cockit
+  (serverCreated)="onServerAdded($event)"
+  (bluePrintCreated)="onBlueprintAdded($event)"
+></app-cockit>
   <hr>
   <div class="row">
     <div class="col-xs-12">
