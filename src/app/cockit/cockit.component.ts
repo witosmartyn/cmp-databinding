@@ -19,7 +19,7 @@ export class CockitComponent implements OnInit {
   }
 
   onAddServer(nameInput: HTMLInputElement) {
-    console.log(nameInput.value);
+    // console.log(nameInput.value);
     this.serverCreated.emit({
       serverName: nameInput.value,
       // serverContent: this.newServerContent,

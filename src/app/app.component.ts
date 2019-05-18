@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, DoCheck, Input} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,7 +7,7 @@ import {Component, Input} from '@angular/core';
 })
 export class AppComponent {
   serverElements = [
-    {type: 'server', name: 's1', content: '----'},
+    // {type: 'server', name: 's1', content: '----'},
     {type: 'server', name: 's2', content: '----'}
   ];
 
@@ -26,4 +26,12 @@ export class AppComponent {
       content: serverData.serverContent
     });
   }
+
+  onChangeFirst() {
+    this.serverElements[0].name = 'Changed';
+  }
+  onDestroyFirst() {
+    this.serverElements.splice(0, 1);
+  }
+
 }
