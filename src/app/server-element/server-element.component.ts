@@ -1,7 +1,7 @@
 import {
   AfterContentChecked,
   AfterContentInit, AfterViewChecked, AfterViewInit,
-  Component,
+  Component, ContentChild,
   DoCheck, ElementRef,
   Input,
   OnChanges,
@@ -23,6 +23,7 @@ export class ServerElementComponent implements
   @Input('srvElement') element: { type: string, name: string, content: string };
   @Input() name: string;
   @ViewChild('heading') header: ElementRef;
+  @ContentChild('contentParagraph') paragraph: ElementRef
     constructor() {
     console.log('construct server');
   }
@@ -31,6 +32,7 @@ export class ServerElementComponent implements
     console.log('ngOnInit called');
     console.log('nativeElement.value is: ' + this.header.nativeElement.value);
     console.log('nativeElement.textContent is: ' + this.header.nativeElement.textContent);
+    console.log('Text Content paragraph is: ' + this.paragraph.nativeElement.textContent);
   }
 
   ngDoCheck(): void {
@@ -46,6 +48,8 @@ export class ServerElementComponent implements
 
   ngAfterContentInit(): void {
     console.log('ngAfterContentInit called');
+    console.log('Text Content paragraph is: ' + this.paragraph.nativeElement.textContent);
+
 
   }
 
